@@ -11,13 +11,17 @@ namespace HCH_LAB456.ViewModels
     {
         [Required]
         public string Place { get; set; }
+
         [Required]
         public string Date { get; set; }
+
         [Required]
         public string Time { get; set; }
-        [Required]
 
+        [Required]
         public byte Category { get; set; }
+
+
         public IEnumerable<Category> Categories { get; set; }
 
         public DateTime GetDateTime()
