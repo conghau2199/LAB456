@@ -14,7 +14,7 @@ namespace HCH_LAB456.Models
         public DbSet<Attendance> Attendances { get; set; }
         public object Course { get; internal set; }
 
-        public ApplicationDbContext() 
+        public ApplicationDbContext()  
             : base("DefaultConnection", throwIfV1Schema: false)
         {
 
