@@ -1,4 +1,5 @@
-﻿using HCH_LAB456.Models;
+﻿using HCH_LAB456.DTOs;
+using HCH_LAB456.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace HCH_LAB456.Controllers
         {
             var userId = User.Identity.GetUserId();
             if (_dbContext.Followings.Any(f => f.FollowerId == userId && f.FolloweeId == followingDto.FolloweeId))
-                return BadRequest("The Attendance already exists!");
+                return BadRequest("The Following already exists!");
 
             var folowing = new Following
             {
@@ -36,10 +37,5 @@ namespace HCH_LAB456.Controllers
 
             return Ok();
         }
-    }
-
-    public class FollowingDto
-    {
-        public string FolloweeId { get; set; }
     }
 }
